@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 0.3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+
+main .left {
+  flex: 2;
+  background: #000;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+main .right {
+  flex: 3;
+  padding: 1.5rem 2rem;
+  background: #3a3737;
+  border-radius: 0.5rem;
+  color: white;
+  overflow: auto;
+}
+
+main .left .review-btn {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  background-color: rgb(136, 136, 185);
+}
+
+
+.left .code {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.code pre {
+  margin: 0;
+  background-color: transparent;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.code pre code {
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+
+.right {
+  flex: 3;
+  padding: 1.5rem 2rem;
+  background: #3a3737;
+  border-radius: 0.5rem;
+  color: white;
+  overflow: auto;
+  position: relative;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #ccc;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  main .left,
+  main .right {
+    width: 100%;
+    height: 50%;
+    flex: none;
+  }
+
+  main .left {
+    order: 1;
+  }
+
+  main .right {
+    order: 2;
+    padding: 1rem;
+  }
+
+  main .left .review-btn {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .code pre code {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  main .left,
+  main .right {
+    height: 50vh;
+  }
+
+  .code pre code {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .loading {
+    font-size: 1.5rem;
+  }
+}
